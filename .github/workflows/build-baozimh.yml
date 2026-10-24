@@ -1,0 +1,37 @@
+name: Build 包子漫画 (custom)
+
+on:
+  push:
+    branches: [publish]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: "17"
+          distribution: temurin
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Build baozimhorg (debug)
+        run: ./gradlew :src:zh:baozimhorg:assembleDebug --stacktrace
+
+      - name: Collect APK
+        run: |
+          mkdir -p out
+          find src/zh/baozimhorg/build/outputs/apk -name '*.apk' -print -exec cp {} out/ \;
+          ls -l out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: baozimh-custom-apk
+          path: out/*.apk
+          if-no-files-found: error

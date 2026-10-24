@@ -6,7 +6,7 @@ plugins {
 
 keiyoushi {
     name = "包子漫画(自建)"
-    versionCode = 35
+    versionCode = 36
     contentWarning = ContentWarning.SAFE
     libVersion = "1.6"
     theme = "goda"
@@ -16,9 +16,10 @@ keiyoushi {
         lang = "zh"
         baseUrl {
             mirrors(
-                "https://cn.cnbzmg.com",
-                "https://cn.bzmgcn.com",
-                "https://www.baozimh.com",
+"https://baozimh.org",
+"https://godamh.com",
+"https://bzmh.org",
+"https://m.baozimh.one",
             )
         }
         id = 774030471139699415L

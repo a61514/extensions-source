@@ -16,10 +16,10 @@ keiyoushi {
         lang = "zh"
         baseUrl {
             mirrors(
-"https://baozimh.org",
-"https://godamh.com",
-"https://bzmh.org",
-"https://m.baozimh.one",
+                "https://baozimh.org",
+                "https://godamh.com",
+                "https://bzmh.org",
+                "https://m.baozimh.one",
             )
         }
         id = 774030471139699415L

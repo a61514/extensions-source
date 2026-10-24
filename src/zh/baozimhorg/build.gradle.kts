@@ -5,23 +5,20 @@ plugins {
 }
 
 keiyoushi {
-    name = "GoDa"
-    versionCode = 34
+    name = "包子漫画(自建)"
+    versionCode = 35
     contentWarning = ContentWarning.SAFE
     libVersion = "1.6"
     theme = "goda"
 
     source {
-        name = "GoDa漫画"
+        name = "包子漫画(自建)"
         lang = "zh"
         baseUrl {
             mirrors(
-                "https://baozimh.org",
-                "https://godamh.com",
-                "https://m.baozimh.one",
-                "https://bzmh.org",
-                "https://g-mh.org",
-                "https://m.g-mh.org",
+                "https://cn.cnbzmg.com",
+                "https://cn.bzmgcn.com",
+                "https://www.baozimh.com",
             )
         }
         id = 774030471139699415L

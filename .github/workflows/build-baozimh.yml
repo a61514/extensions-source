@@ -20,6 +20,12 @@ jobs:
           distribution: temurin
 
       - uses: gradle/actions/setup-gradle@v4
+            # 缓存 debug keystore：否则每次构建签名都不同，装新版必须先卸载
+      - name: Cache debug keystore
+        uses: actions/cache@v4
+        with:
+          path: ~/.android/debug.keystore
+          key: android-debug-keystore-v1
 
       - name: Build baozimhorg (debug)
         run: ./gradlew :src:zh:baozimhorg:assembleDebug --stacktrace

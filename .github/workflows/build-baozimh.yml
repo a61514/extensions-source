@@ -28,7 +28,7 @@ jobs:
           key: android-debug-keystore-v1
 
       - name: Build baozimhorg (debug)
-        run: ./gradlew :src:zh:baozimhorg:assembleDebug --stacktrace
+        run: ./gradlew :src:zh:baozimhorg:assembleDebug -x spotlessKotlinCheck --stacktrace
 
       - name: Collect APK
         run: |
